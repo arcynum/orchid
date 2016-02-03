@@ -121,6 +121,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Adding gmail functionality
+# Adding local mail functionality
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 25
