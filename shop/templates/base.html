@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
-        <title>Katie's Flower Corner</title>
+        <title>Imagination Flower Shop</title>
 
         <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/text.css' %}">
@@ -17,12 +17,21 @@
     <body>
         <div id="masthead" class="grid-container">
             <div class="grid-100 mobile-grid-100">
-                <h1>Katie's Flower Corner</h1>
+                <h1>Imagination Flower Shop</h1>
+            </div>
+        </div>
+        <div id="cart" class="grid-container">
+            <div>
+                {% if user.is_authenticated %}
+                    Hi {{ user.first_name }}
+                {% else %}
+                    You are not logged in.
+                {% endif %}
             </div>
         </div>
         <div id="navigation" class="grid-container">
             <ul>
-                <li class="grid-25 mobile-grid-100"><a href="{% url 'index' %}">Home</a></li>
+                <li class="grid-25 mobile-grid-100"><a href="{% url 'shop:index' %}">Home</a></li>
                 <li class="grid-25 mobile-grid-100">Shop</li>
                 <li class="grid-25 mobile-grid-100">About</li>
                 <li class="grid-25 mobile-grid-100">Contact</li>
